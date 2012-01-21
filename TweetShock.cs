@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Text;
 using TShockAPI;
 using Terraria;
@@ -52,15 +53,25 @@ namespace TweetShock
 			tokens.ConsumerSecret = configFile.ConsumerSecret;
 
 			Hooks.ServerHooks.Connect += TweetJoin;
+			Hooks.GameHooks.PostInitialize += GameHooks_PostInitialize;
 		}
 
-		public void TweetJoin(int id, HandledEventArgs args)
+		void GameHooks_PostInitialize()
 		{
-			// SendTweet("Player " + Main.player[id].name + " joined the server.");
-			Console.WriteLine("Player: " + Main.player[id].name);
+			WebClient wc = new WebClient();
+			string ip = wc.DownloadString("http://whatismyip.org/");
+
+			SendTweet("Terraria up @ " + ip + ":" + Netplay.serverPort);
 		}
 
-		public bool SendTweet(string msg)
+		void TweetJoin(int id, HandledEventArgs args)
+		{
+			// Spammy, don't do this, please.
+			// SendTweet("Player " + Main.player[id].name + " joined the server.");
+			// Console.WriteLine("Player: " + Main.player[id].name);
+		}
+
+		bool SendTweet(string msg)
 		{
 			TwitterResponse<TwitterStatus> tw = TwitterStatus.Update(tokens, msg);
 			if (tw.Result == RequestResult.Success)
