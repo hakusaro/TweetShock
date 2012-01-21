@@ -38,7 +38,7 @@ namespace TweetShock
 
 		public override Version Version
 		{
-			get { return new Version(1, 0); } //Version 1.0
+			get { return new Version(1, 1); } //Version 1.0
 		}
 
 		public override string Author
