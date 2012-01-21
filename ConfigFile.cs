@@ -30,7 +30,7 @@ namespace TweetShock
 			{
 				///Write one
 				TextWriter tw = new StreamWriter(path);
-				string json = JsonConvert.SerializeObject(new ConfigLayout()); //Write a templated ConfigLayout
+				string json = JsonConvert.SerializeObject(new ConfigLayout(), Formatting.Indented); //Write a templated ConfigLayout
 				tw.Write(json);
 				tw.Close();
 			}
