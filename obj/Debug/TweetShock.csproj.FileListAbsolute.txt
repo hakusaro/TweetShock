@@ -1,0 +1,9 @@
+c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\bin\Debug\TweetShock.dll
+c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\bin\Debug\TweetShock.pdb
+c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\bin\Debug\Newtonsoft.Json.dll
+c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\bin\Debug\TerrariaServer.exe
+c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\bin\Debug\TShockAPI.dll
+c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\bin\Debug\Twitterizer2.dll
+c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\obj\Debug\TweetShock.csprojResolveAssemblyReference.cache
+c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\obj\Debug\TweetShock.dll
+c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\obj\Debug\TweetShock.pdb
