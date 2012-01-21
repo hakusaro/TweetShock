@@ -3,7 +3,7 @@
  * 
  * Author: nicatronTg
  * 
- * Difficulty: Medium
+ * Difficulty: Advanced
  */
 
 /* This program is free software. It comes without any warranty, to
@@ -76,6 +76,8 @@ namespace TweetShock
 
 		void GameHooks_PostInitialize()
 		{
+			if (!configFile.EnableStartHook)
+				return;
 			WebClient wc = new WebClient(); //Create a web request
 			string ip = wc.DownloadString("http://whatismyip.org/"); //Download the server's public IP from whatismyip.org using the web client.
 
@@ -86,8 +88,8 @@ namespace TweetShock
 		{
 			// Spammy, don't do this, please.
 			// Sends a tweet on a player join event
-			// SendTweet("Player " + Main.player[id].name + " joined the server.");
-			// Console.WriteLine("Player: " + Main.player[id].name);
+			SendTweet("Player " + Main.player[id].name + " joined the server.");
+			Console.WriteLine("Player: " + Main.player[id].name);
 		}
 
 		bool SendTweet(string msg)

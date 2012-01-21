@@ -43,5 +43,9 @@ namespace TweetShock
 		public string AccessTokenSecret = "";
 		public string ConsumerKey = "";
 		public string ConsumerSecret = "";
+		public bool EnableJoinHook = true;
+		public bool EnableStartHook = true;
+		public string JoinTemplate = "Player {ply} has joined the server!";
+		public string StartTemplate = "The server is now running on {ip}:{port}";
 	}
 }
