@@ -81,14 +81,18 @@ namespace TweetShock
 			WebClient wc = new WebClient(); //Create a web request
 			string ip = wc.DownloadString("http://whatismyip.org/"); //Download the server's public IP from whatismyip.org using the web client.
 
-			SendTweet("Terraria up @ " + ip + ":" + Netplay.serverPort); //Call the SendTweet method with our message.
+			SendTweet(configFile.StartTemplate.Replace("{ip}", ip).Replace("{port}", Convert.ToString(Netplay.serverPort))); //Call the SendTweet method with our message.
 		}
 
 		void TweetJoin(int id, HandledEventArgs args)
 		{
 			// Spammy, don't do this, please.
 			// Sends a tweet on a player join event
-			SendTweet("Player " + Main.player[id].name + " joined the server.");
+
+			if (!configFile.EnableJoinHook)
+				return;
+
+			SendTweet(configFile.JoinTemplate.Replace("{ply}", Main.player[id].name));
 			Console.WriteLine("Player: " + Main.player[id].name);
 		}
 
