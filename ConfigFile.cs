@@ -35,6 +35,18 @@ namespace TweetShock
 				tw.Close();
 			}
 		}
+
+		public void WriteConfigFile(ConfigLayout config)
+		{
+			if (File.Exists(path)) //If the config file doesn't exist yet
+			{
+				///Write one
+				TextWriter tw = new StreamWriter(path);
+				string json = JsonConvert.SerializeObject(config, Formatting.Indented); //Write a templated ConfigLayout
+				tw.Write(json);
+				tw.Close();
+			}
+		}
 	}
 
 	class ConfigLayout //Simple class that will be written to the JSON file using Newtonsoft's JsonConvert.SerializeObject method

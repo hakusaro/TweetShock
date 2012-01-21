@@ -60,6 +60,7 @@ namespace TweetShock
 		{
 			config.WriteConfigFile(); //Write the initial config file first, in the event that it doesn't exist.
 			configFile = config.ReadConfigFile(); //Read the configuration file and store it in our previously created stub class
+			config.WriteConfigFile(configFile); //Write back the file. Because JsonConvert automagically forms classes, this will automatically update the config file with any new options that may have happened during release.
 			Console.WriteLine("Welcome to TweetShock. Initial configuration read OK. Verify that you've set all app keys before continuing."); //Output some helper text
 
 			/*
