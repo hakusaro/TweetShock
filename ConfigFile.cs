@@ -9,33 +9,35 @@ namespace TweetShock
 {
 	class ConfigFile
 	{
-		public string path = Path.Combine("tshock", "tweetshock.json");
+		public string path = Path.Combine("tshock", "tweetshock.json"); //Path.Combine turns this into ./tshock/tweetshock.json
 
 		public ConfigLayout ReadConfigFile()
 		{
-			if (File.Exists(path))
+			if (File.Exists(path)) //If the config file exists
 			{
+				//Create a TextReader, read the file, then close the file
 				TextReader tr = new StreamReader(path);
 				string pre = tr.ReadToEnd();
 				tr.Close();
-				return JsonConvert.DeserializeObject<ConfigLayout>(pre);
+				return JsonConvert.DeserializeObject<ConfigLayout>(pre); //Return back a ConfigLayout object from the JSON object
 			}
-			return null;
+			return null; //Something went wrong, I don't care what, send back null
 		}
 
 		public void WriteConfigFile()
 		{
-			if (!File.Exists(path))
+			if (!File.Exists(path)) //If the config file doesn't exist yet
 			{
+				///Write one
 				TextWriter tw = new StreamWriter(path);
-				string json = JsonConvert.SerializeObject(new ConfigLayout());
+				string json = JsonConvert.SerializeObject(new ConfigLayout()); //Write a templated ConfigLayout
 				tw.Write(json);
 				tw.Close();
 			}
 		}
 	}
 
-	class ConfigLayout
+	class ConfigLayout //Simple class that will be written to the JSON file using Newtonsoft's JsonConvert.SerializeObject method
 	{
 		public string AccessToken = "";
 		public string AccessTokenSecret = "";
