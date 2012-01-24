@@ -72,10 +72,21 @@ namespace TweetShock
 			tokens.ConsumerSecret = configFile.ConsumerSecret;
 
 			Hooks.ServerHooks.Connect += TweetJoin; //Hook when a player joins
-			Hooks.GameHooks.PostInitialize += GameHooks_PostInitialize; //Hook when the map loads, directly after you see the console
+			Hooks.GameHooks.PostInitialize += TweetPostInit; //Hook when the map loads, directly after you see the console
+			Hooks.ServerHooks.Leave += TweetLeave; //Hook when a player leaves
 		}
 
-		void GameHooks_PostInitialize()
+		#region Hooks
+
+		void TweetLeave(int id)
+		{
+			if (!configFile.EnableLeaveHook)
+				return;
+
+			SendTweet(configFile.LeaveTemplate.Replace("{ply}", TShockAPI.TShock.Players[id].Name));
+		}
+
+		void TweetPostInit()
 		{
 			if (!configFile.EnableStartHook)
 				return;
@@ -96,6 +107,7 @@ namespace TweetShock
 			SendTweet(configFile.JoinTemplate.Replace("{ply}", Main.player[id].name));
 			Console.WriteLine("Player: " + Main.player[id].name);
 		}
+		#endregion
 
 		bool SendTweet(string msg)
 		{

@@ -57,6 +57,8 @@ namespace TweetShock
 		public string ConsumerSecret = "";
 		public bool EnableJoinHook = true;
 		public bool EnableStartHook = true;
+		public bool EnableLeaveHook = true;
+		public string LeaveTemplate = "Player {ply} has left the server!";
 		public string JoinTemplate = "Player {ply} has joined the server!";
 		public string StartTemplate = "The server is now running on {ip}:{port}";
 	}
