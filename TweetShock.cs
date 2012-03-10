@@ -71,7 +71,7 @@ namespace TweetShock
 			tokens.ConsumerKey = configFile.ConsumerKey;
 			tokens.ConsumerSecret = configFile.ConsumerSecret;
 
-			Hooks.ServerHooks.Connect += TweetJoin; //Hook when a player joins
+			Hooks.ServerHooks.Join += TweetJoin; //Hook when a player joins
 			Hooks.GameHooks.PostInitialize += TweetPostInit; //Hook when the map loads, directly after you see the console
 			Hooks.ServerHooks.Leave += TweetLeave; //Hook when a player leaves
 		}

@@ -7,3 +7,8 @@ c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\bin\D
 c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\obj\Debug\TweetShock.csprojResolveAssemblyReference.cache
 c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\obj\Debug\TweetShock.dll
 c:\users\shank\dropbox\design and development\csharp\TweetShock\TweetShock\obj\Debug\TweetShock.pdb
+C:\Users\IglooAtHome\git\TweetShock\bin\Debug\TweetShock.dll
+C:\Users\IglooAtHome\git\TweetShock\bin\Debug\TweetShock.pdb
+C:\Users\IglooAtHome\git\TweetShock\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\IglooAtHome\git\TweetShock\obj\Debug\TweetShock.dll
+C:\Users\IglooAtHome\git\TweetShock\obj\Debug\TweetShock.pdb
