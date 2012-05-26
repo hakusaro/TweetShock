@@ -24,7 +24,7 @@ using Twitterizer;
 
 namespace TweetShock
 {
-	[APIVersion(1,11)] //Runs on API version 1.11
+	[APIVersion(1,12)] //Runs on API version 1.11
 	public class TweetShock : TerrariaPlugin
 	{
 		public TweetShock(Main game) : base(game)
